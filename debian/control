@@ -1,0 +1,15 @@
+Source: jeo
+Section: misc
+Priority: optional
+Maintainer: Justin Deoliveira <jdeolive@boundlessgeo.com>
+Build-Depends: debhelper (>= 7), unzip
+Standards-Version: 3.8.4
+Homepage: https://jeo.github.io
+
+Package: jeo
+Architecture: all
+Depends: openjdk-6-jre, ${misc:Depends}
+Description: Lightweight spatial library for Java.
+ A library providing low level spatial capabilities with a command line 
+ interface.
+

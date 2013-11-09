@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpatch/dpatch.make
+
+build_dir=$(CURDIR)/debian/jeo
+bin_dir=$(build_dir)/usr/bin
+lib_dir=$(build_dir)/usr/share/jeo
+doc_dir=$(build_dir)/usr/share/doc/jeo
+
+build: patch
+
+binary: binary-indep
+
+binary-indep:
+
+	mkdir -p $(bin_dir)
+	mv $(CURDIR)/bin/jeo $(bin_dir)
+	
+	mkdir -p $(lib_dir)
+	mv $(CURDIR)/lib/* $(lib_dir)
+
+	mkdir -p $(doc_dir)
+	mv $(CURDIR)/*.txt $(doc_dir)
+	cp $(doc_dir)/LICENSE.txt $(doc_dir)/copyright
+
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+clean: unpatch
+	dh_clean
+	rm -rf $(build_dir)
+
+.PHONY: binary binary-indep clean
