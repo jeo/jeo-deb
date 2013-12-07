@@ -1,6 +1,11 @@
+jeo (0.2) unstable; urgency=low
+
+  *  New upstream release
+
+ -- Justin Deoliveira <jdeolive@boundlessgeo.com>  Fri, 6 Dec 2013 21:42:00 -0700
+
 jeo (0.1) unstable; urgency=low
 
   *  Initial release of jeo package
 
  -- Justin Deoliveira <jdeolive@boundlessgeo.com>  Mon, 11 Nov 2013 14:49:39 -0700
-

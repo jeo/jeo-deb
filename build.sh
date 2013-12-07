@@ -3,8 +3,9 @@
 set -x
 set -e
 
-ver=0.1
+ver=0.2
 zip=jeo-$ver-cli.zip
+url=http://ares.boundlessgeo.com/jeo/release/$ver/$zip
 
 if [ -e $zip ]; then
   rm $zip
@@ -22,6 +23,7 @@ if [ "$1" == "clean" ]; then
   exit
 fi
 
+wget $url
 unzip -d tmp $zip
 pushd tmp/jeo-$ver
 mv * ../../
