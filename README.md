@@ -5,7 +5,7 @@
 Before deb packages can be built a few packages must be installed on the system
 where the build is occuring.
 
-    % apt-get install unzip build-essential devscripts debconf debhelper dpatch unzip
+    % apt-get install unzip build-essential devscripts debconf debhelper dpatch 
 
 ## Building
 
