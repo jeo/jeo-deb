@@ -30,7 +30,7 @@ binary-indep:
 
 	mkdir -p $(doc_dir)
 	mv $(CURDIR)/*.txt $(doc_dir)
-	cp $(doc_dir)/LICENSE.md $(doc_dir)/copyright
+	cp $(CURDIR)/LICENSE.md $(doc_dir)/copyright
 
 	dh_fixperms
 	dh_installdeb
