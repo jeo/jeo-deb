@@ -11,8 +11,6 @@ if [ -e $zip ]; then
   rm $zip
 fi
 
-wget http://ares.boundlessgeo.com/jeo/release/$ver/$zip
-
 if [ -e tmp ]; then
   rm -rf tmp 
 fi
