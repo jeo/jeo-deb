@@ -3,7 +3,7 @@
 set -x
 set -e
 
-ver=0.2
+ver=0.3
 zip=jeo-$ver-cli.zip
 url=http://ares.boundlessgeo.com/jeo/release/$ver/$zip
 
