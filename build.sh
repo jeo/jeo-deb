@@ -21,7 +21,7 @@ if [ -e tmp ]; then
   rm -rf tmp 
 fi
 
-rm -rf LICENSE.md bin lib ext jni
+rm -rf LICENSE.md *.txt bin lib ext jni
 
 if [ "$1" == "clean" ]; then
   exit
