@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Justin Deoliveira <jdeolive@gmail.com>
 Build-Depends: debhelper (>= 7), unzip
 Standards-Version: 3.8.4
-Homepage: https://jeo.io
+Homepage: http://jeo.io
 
 Package: jeo
 Architecture: all
@@ -15,6 +15,6 @@ Description: Lightweight spatial library for Java.
 
 Package: jeo-gdal
 Architecture: any
-Depends: jeo (=${binary:Version}), libgdal (>=1.11.1), ${misc:Depends}
+Depends: jeo (=${binary:Version}), ${misc:Depends}
 Description: GDAL/OGR format extensions for jeo.
  Adds additional format support through the gdal/ogr libraries.
