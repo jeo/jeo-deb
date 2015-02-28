@@ -11,10 +11,14 @@
 
 include /usr/share/dpatch/dpatch.make
 
-build_dir=$(CURDIR)/debian/jeo
+root_dir=$(CURDIR)/debian
+build_dir=$(root_dir)/jeo
 bin_dir=$(build_dir)/usr/bin
 lib_dir=$(build_dir)/usr/share/jeo
 doc_dir=$(build_dir)/usr/share/doc/jeo
+
+gdal_build_dir=$(root_dir)/jeo-gdal
+gdal_lib_dir=$(gdal_build_dir)/usr/share/jeo/ext
 
 build: patch
 
@@ -27,11 +31,15 @@ binary-indep:
 	
 	mkdir -p $(lib_dir)
 	mv $(CURDIR)/lib/* $(lib_dir)
+	mv $(CURDIR)/ext $(lib_dir)
 
 	mkdir -p $(doc_dir)
 	mv $(CURDIR)/*.txt $(doc_dir)
 	cp $(CURDIR)/LICENSE.md $(doc_dir)/copyright
 
+	mkdir -p $(gdal_lib_dir)
+	cp $(CURDIR)/jni/* $(gdal_lib_dir)
+        
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol

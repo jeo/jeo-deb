@@ -1,15 +1,20 @@
 Source: jeo
 Section: misc
 Priority: optional
-Maintainer: Justin Deoliveira <jdeolive@boundlessgeo.com>
+Maintainer: Justin Deoliveira <jdeolive@gmail.com>
 Build-Depends: debhelper (>= 7), unzip
 Standards-Version: 3.8.4
-Homepage: https://jeo.github.io
+Homepage: https://jeo.io
 
 Package: jeo
 Architecture: all
-Depends: openjdk-6-jre, ${misc:Depends}
+Depends: ${misc:Depends}
 Description: Lightweight spatial library for Java.
  A library providing low level spatial capabilities with a command line 
  interface.
 
+Package: jeo-gdal
+Architecture: any
+Depends: jeo (=${binary:Version}), libgdal (>=1.11.1), ${misc:Depends}
+Description: GDAL/OGR format extensions for jeo.
+ Adds additional format support through the gdal/ogr libraries.

@@ -1,14 +1,14 @@
 #! /bin/sh /usr/share/dpatch/dpatch-run
-## jeo.dpatch by  <ubuntu@domU-12-31-39-06-25-61.compute-1.internal>
+## jeo.dpatch by  <vagrant@trusty64>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
-## DP: setting repo in jeo binary
+## DP: No description.
 
 @DPATCH@
-
---- jeo-deb.orig/bin/jeo	2013-11-09 23:29:22.588609948 +0000
-+++ jeo-deb/bin/jeo	2013-11-09 23:29:40.004605779 +0000
-@@ -88,7 +88,7 @@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' jeo-deb~/bin/jeo jeo-deb/bin/jeo
+--- jeo-deb~/bin/jeo	2015-02-28 11:18:40.000000000 +0000
++++ jeo-deb/bin/jeo	2015-02-28 18:35:41.887921886 +0000
+@@ -88,11 +88,11 @@
  
  if [ -z "$REPO" ]
  then
@@ -16,4 +16,9 @@
 +  REPO=/usr/share/jeo
  fi
  
- CLASSPATH=$CLASSPATH_PREFIX:"$BASEDIR"/etc:"$REPO"/jeo-geogit-0.1.jar:"$REPO"/jeo-0.1.jar:"$REPO"/jeo-geotools-0.1.jar:"$REPO"/gt-main-9.0.jar:"$REPO"/gt-api-9.0.jar:"$REPO"/jdom-1.0.jar:"$REPO"/jai_core-1.1.3.jar:"$REPO"/geogit-core-0.4-20130811.003311-67.jar:"$REPO"/gt-opengis-9.0.jar:"$REPO"/jsr-275-1.0-beta-2.jar:"$REPO"/vecmath-1.3.2.jar:"$REPO"/commons-pool-1.5.4.jar:"$REPO"/gt-referencing-9.0.jar:"$REPO"/gt-metadata-9.0.jar:"$REPO"/jgridshift-1.0.jar:"$REPO"/gt-epsg-hsql-9.0.jar:"$REPO"/hsqldb-1.8.0.7.jar:"$REPO"/gt-cql-9.0.jar:"$REPO"/ini4j-0.5.2.jar:"$REPO"/jsr305-1.3.7.jar:"$REPO"/guice-3.0.jar:"$REPO"/javax.inject-1.jar:"$REPO"/aopalliance-1.0.jar:"$REPO"/gson-2.2.2.jar:"$REPO"/compress-lzf-0.9.5.jar:"$REPO"/neo4j-1.9.RC2.jar:"$REPO"/neo4j-kernel-1.9.RC2.jar:"$REPO"/neo4j-lucene-index-1.9.RC2.jar:"$REPO"/lucene-core-3.6.2.jar:"$REPO"/neo4j-graph-algo-1.9.RC2.jar:"$REPO"/neo4j-udc-1.9.RC2.jar:"$REPO"/neo4j-graph-matching-1.9.RC2.jar:"$REPO"/neo4j-cypher-1.9.RC2.jar:"$REPO"/scala-library-2.10.0.jar:"$REPO"/concurrentlinkedhashmap-lru-1.3.1.jar:"$REPO"/neo4j-jmx-1.9.RC2.jar:"$REPO"/neo4j-kernel-1.9.RC2-tests.jar:"$REPO"/geronimo-jta_1.1_spec-1.1.1.jar:"$REPO"/geogit-bdbje-0.4-20130811.003314-67.jar:"$REPO"/je-5.0.84.jar:"$REPO"/jeo-csv-0.1.jar:"$REPO"/jeo-postgis-0.1.jar:"$REPO"/jeo-sql-0.1.jar:"$REPO"/postgresql-9.1-901.jdbc4.jar:"$REPO"/jeo-mongo-0.1.jar:"$REPO"/mongo-java-driver-2.9.3.jar:"$REPO"/jeo-geopkg-0.1.jar:"$REPO"/sqlite-jdbc-3.7.2.jar:"$REPO"/jeo-carto-0.1.jar:"$REPO"/lessen-1.0.jar:"$REPO"/jeo-nano-0.1.jar:"$REPO"/guava-13.0.jar:"$REPO"/jcommander-1.30.jar:"$REPO"/jline-2.10.jar:"$REPO"/jeo-0.1-tests.jar:"$REPO"/jts-1.13.jar:"$REPO"/proj4j-0.1.0-jeo.jar:"$REPO"/slf4j-api-1.7.2.jar:"$REPO"/slf4j-jdk14-1.7.2.jar:"$REPO"/jeo-cli-0.1.jar
+ CLASSPATH=$CLASSPATH_PREFIX:"$BASEDIR"/etc:"$REPO"/jeo-csv-0.5.jar:"$REPO"/jeo-0.5.jar:"$REPO"/javacsv-2.1.jar:"$REPO"/jeo-postgis-0.5.jar:"$REPO"/jeo-sql-0.5.jar:"$REPO"/postgresql-9.1-901.jdbc4.jar:"$REPO"/jeo-mongo-0.5.jar:"$REPO"/mongo-java-driver-2.9.3.jar:"$REPO"/jeo-geopkg-0.5.jar:"$REPO"/sqlite-jdbc-3.8.7.jar:"$REPO"/jeo-protobuf-0.5.jar:"$REPO"/protobuf-java-2.4.1.jar:"$REPO"/jeo-gdal-0.5.jar:"$REPO"/gdal-1.11.1.jar:"$REPO"/guava-13.0.jar:"$REPO"/jcommander-1.47.jar:"$REPO"/jline-2.12.1.jar:"$REPO"/jeo-0.5-tests.jar:"$REPO"/jts-1.13.jar:"$REPO"/proj4j-0.1.0-jeo.jar:"$REPO"/slf4j-api-1.7.2.jar:"$REPO"/slf4j-jdk14-1.7.2.jar:"$REPO"/jeo-cli-0.5.jar
+-EXTRA_JVM_ARGUMENTS="-Xmx1024m -Djava.library.path=$BASEDIR/ext"
++EXTRA_JVM_ARGUMENTS="-Xmx1024m -Djava.library.path=$REPO/ext"
+ 
+ # For Cygwin, switch paths to Windows format before running java
+ if $cygwin; then
