@@ -17,9 +17,6 @@ bin_dir=$(build_dir)/usr/bin
 lib_dir=$(build_dir)/usr/share/jeo
 doc_dir=$(build_dir)/usr/share/doc/jeo
 
-gdal_build_dir=$(root_dir)/jeo-gdal
-gdal_lib_dir=$(gdal_build_dir)/usr/share/jeo/ext
-
 build: patch
 
 binary: binary-indep
@@ -37,9 +34,6 @@ binary-indep:
 	mv $(CURDIR)/*.txt $(doc_dir)
 	cp $(CURDIR)/LICENSE.md $(doc_dir)/copyright
 
-	mkdir -p $(gdal_lib_dir)
-	cp $(CURDIR)/jni/* $(gdal_lib_dir)
-        
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol

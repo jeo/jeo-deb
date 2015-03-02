@@ -21,7 +21,7 @@ if [ -e tmp ]; then
   rm -rf tmp 
 fi
 
-rm -rf LICENSE.md *.txt bin lib ext jni
+rm -rf LICENSE.md *.txt bin lib ext
 
 if [ "$1" == "clean" ]; then
   exit
@@ -34,8 +34,10 @@ mv * ../../
 popd
 
 wget $gdal_url
-mkdir jni
-tar xzvf $gdal_tgz -C jni
+tar xzvf $gdal_tgz -C tmp
+pushd tmp
+mv * ../ext
+popd
 
 debuild clean
 debuild -uc -us -b -i

@@ -7,14 +7,14 @@ Standards-Version: 3.8.4
 Homepage: http://jeo.io
 
 Package: jeo
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends}
 Description: Lightweight spatial library for Java.
  A library providing low level spatial capabilities with a command line 
  interface.
 
-Package: jeo-gdal
-Architecture: any
-Depends: jeo (=${binary:Version}), ${misc:Depends}
-Description: GDAL/OGR format extensions for jeo.
- Adds additional format support through the gdal/ogr libraries.
+#Package: jeo-gdal
+#Architecture: any
+#Depends: jeo (=${binary:Version}), ${misc:Depends}
+#Description: GDAL/OGR format extensions for jeo.
+# Adds additional format support through the gdal/ogr libraries.
