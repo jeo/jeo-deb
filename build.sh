@@ -5,7 +5,7 @@ set -e
 
 ver=0.5
 zip=jeo-$ver-cli.zip
-gdal_tgz=gdaljni-1.11.1-linux64.tgz
+gdal_tgz=gdaljni-1.11.1-ubuntu-x86_64.tgz
 
 url=https://github.com/jeo/jeo-cli/releases/download/$ver/$zip
 gdal_url=https://github.com/jeo/jeo-cli/releases/download/$ver/$gdal_tgz
